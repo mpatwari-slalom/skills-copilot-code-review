@@ -20,6 +20,10 @@
       <h2>Extracurricular Activities</h2>
       <div id="user-controls">
         <div id="user-status">
+          <button id="announcements-button" class="icon-button" title="Announcements">
+            <span class="announce-icon">📣</span>
+            <span>Announcements</span>
+          </button>
           <button id="login-button" class="icon-button">
             <span class="user-icon">👤</span>
             <span>Login</span>
@@ -134,6 +138,37 @@
           <button type="submit">Login</button>
         </form>
         <div id="login-message" class="hidden message"></div>
+      </div>
+    </div>
+
+    <!-- Announcements Modal -->
+    <div id="announcements-modal" class="modal hidden">
+      <div class="modal-content" style="max-width:720px; width: 95%;">
+        <span class="close-announcements-modal">&times;</span>
+        <h3>Announcements</h3>
+        <div id="announcements-container">
+          <div id="announcements-list">
+            <p>Loading announcements...</p>
+          </div>
+          <div id="announcements-message" class="hidden message"></div>
+        </div>
+
+        <!-- Management area (only for signed in users) -->
+        <div id="announcements-manager" class="hidden" style="margin-top:16px;">
+          <h4>Manage Announcements</h4>
+          <form id="announcement-form" style="display:flex;flex-direction:column;gap:8px;">
+            <textarea id="announcement-message" placeholder="Announcement message" required rows="3"></textarea>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <label>Start Date (optional): <input type="date" id="announcement-start" /></label>
+              <label>Expiration Date: <input type="date" id="announcement-expiration" required /></label>
+            </div>
+            <div style="display:flex;gap:8px;justify-content:flex-end;">
+              <button type="submit" id="save-announcement">Save</button>
+              <button type="button" id="cancel-announcement">Cancel</button>
+            </div>
+            <input type="hidden" id="announcement-id" />
+          </form>
+        </div>
       </div>
     </div>
 
